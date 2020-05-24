@@ -1,0 +1,30 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega128"</DEVICE>
+ <WORKING_DIR>C:\AVR_2019\ascend\ascend\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\AVR_2019\ascend\ascend\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m128def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\AVR_2019\ascend\ascend\Debug\ascend.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>ascend.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>ascend.map</FILE>
+  <FILE>ascend.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <loop><FILE>C:\AVR_2019\ascend\ascend\main.asm</FILE><LINE>21</LINE></loop>
+  <loopin><FILE>C:\AVR_2019\ascend\ascend\main.asm</FILE><LINE>27</LINE></loopin>
+  <skipswap><FILE>C:\AVR_2019\ascend\ascend\main.asm</FILE><LINE>41</LINE></skipswap>
+  <end><FILE>C:\AVR_2019\ascend\ascend\main.asm</FILE><LINE>56</LINE></end>
+ </LABELS>
+</ASSEMBLER_INFO>

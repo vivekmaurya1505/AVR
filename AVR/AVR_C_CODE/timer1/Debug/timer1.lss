@@ -1,0 +1,159 @@
+
+timer1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000146  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000000f2  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000146  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000178  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000030  00000000  00000000  000001b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000088c  00000000  00000000  000001e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000007e7  00000000  00000000  00000a70  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000274  00000000  00000000  00001257  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000044  00000000  00000000  000014cc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000003c3  00000000  00000000  00001510  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000024  00000000  00000000  000018d3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000020  00000000  00000000  000018f7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   8:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  10:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  14:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  18:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  1c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  20:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  24:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  28:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  2c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  30:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  34:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  38:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  3c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  40:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  44:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  48:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  4c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  50:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  54:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  58:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  5c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  60:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  64:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  68:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  6c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  70:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  74:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  78:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  7c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  80:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  84:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  88:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	0e 94 6b 00 	call	0xd6	; 0xd6 <main>
+  9c:	0c 94 77 00 	jmp	0xee	; 0xee <_exit>
+
+000000a0 <__bad_interrupt>:
+  a0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a4 <timer1_init>:
+			timer1_delay(1000);      
+			PORTC=~(PORTC);                // delay for 10 sec                      
+	}   
+}
+void timer1_init(){
+	TCCR1B|=(1<<CS10);   
+  a4:	8e b5       	in	r24, 0x2e	; 46
+  a6:	81 60       	ori	r24, 0x01	; 1
+  a8:	8e bd       	out	0x2e, r24	; 46
+  aa:	08 95       	ret
+
+000000ac <timer1_delay>:
+}
+ void timer1_delay(unsigned int time_ms){
+	 
+	 for (int i=0;i<time_ms;i++){
+  ac:	00 97       	sbiw	r24, 0x00	; 0
+  ae:	91 f0       	breq	.+36     	; 0xd4 <timer1_delay+0x28>
+  b0:	ac 01       	movw	r20, r24
+  b2:	20 e0       	ldi	r18, 0x00	; 0
+  b4:	30 e0       	ldi	r19, 0x00	; 0
+		 
+		 TCNT1=49536;
+  b6:	60 e8       	ldi	r22, 0x80	; 128
+  b8:	71 ec       	ldi	r23, 0xC1	; 193
+  ba:	7d bd       	out	0x2d, r23	; 45
+  bc:	6c bd       	out	0x2c, r22	; 44
+		while(!(TIFR&(1<<2)));            //check overflow condition 
+  be:	06 b6       	in	r0, 0x36	; 54
+  c0:	02 fe       	sbrs	r0, 2
+  c2:	fd cf       	rjmp	.-6      	; 0xbe <timer1_delay+0x12>
+		                             //TCNT1=49536 increase upto 65535 for 1 ms 
+		TIFR|=(1<<TOV1);                          //reset tov1 to 0
+  c4:	96 b7       	in	r25, 0x36	; 54
+  c6:	94 60       	ori	r25, 0x04	; 4
+  c8:	96 bf       	out	0x36, r25	; 54
+void timer1_init(){
+	TCCR1B|=(1<<CS10);   
+}
+ void timer1_delay(unsigned int time_ms){
+	 
+	 for (int i=0;i<time_ms;i++){
+  ca:	2f 5f       	subi	r18, 0xFF	; 255
+  cc:	3f 4f       	sbci	r19, 0xFF	; 255
+  ce:	24 17       	cp	r18, r20
+  d0:	35 07       	cpc	r19, r21
+  d2:	99 f7       	brne	.-26     	; 0xba <timer1_delay+0xe>
+  d4:	08 95       	ret
+
+000000d6 <main>:
+void timer1_delay(unsigned int );
+
+
+int main(void)
+{
+	timer1_init();                                     //timer1 initialization
+  d6:	0e 94 52 00 	call	0xa4	; 0xa4 <timer1_init>
+	   DDRC=0xff;                                     //set direction port c as a output for led
+  da:	8f ef       	ldi	r24, 0xFF	; 255
+  dc:	84 bb       	out	0x14, r24	; 20
+    while (1){                                         //infinite loop
+			timer1_delay(1000);      
+  de:	88 ee       	ldi	r24, 0xE8	; 232
+  e0:	93 e0       	ldi	r25, 0x03	; 3
+  e2:	0e 94 56 00 	call	0xac	; 0xac <timer1_delay>
+			PORTC=~(PORTC);                // delay for 10 sec                      
+  e6:	85 b3       	in	r24, 0x15	; 21
+  e8:	80 95       	com	r24
+  ea:	85 bb       	out	0x15, r24	; 21
+  ec:	f8 cf       	rjmp	.-16     	; 0xde <main+0x8>
+
+000000ee <_exit>:
+  ee:	f8 94       	cli
+
+000000f0 <__stop_program>:
+  f0:	ff cf       	rjmp	.-2      	; 0xf0 <__stop_program>

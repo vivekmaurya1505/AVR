@@ -1,0 +1,269 @@
+
+UART_RX_LCD.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  000001e2  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000018e  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000001e2  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000214  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000058  00000000  00000000  00000250  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000ad6  00000000  00000000  000002a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000887  00000000  00000000  00000d7e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000003d4  00000000  00000000  00001605  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000a4  00000000  00000000  000019dc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000435  00000000  00000000  00001a80  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000001c1  00000000  00000000  00001eb5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000048  00000000  00000000  00002076  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   8:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  10:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  14:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  18:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  1c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  20:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  24:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  28:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  2c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  30:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  34:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  38:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  3c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  40:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  44:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  48:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  4c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  50:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  54:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  58:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  5c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  60:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  64:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  68:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  6c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  70:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  74:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  78:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  7c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  80:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  84:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  88:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	0e 94 bc 00 	call	0x178	; 0x178 <main>
+  9c:	0c 94 c5 00 	jmp	0x18a	; 0x18a <_exit>
+
+000000a0 <__bad_interrupt>:
+  a0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a4 <uart_init>:
+}
+
+void uart_tx(unsigned char data){
+	while(!((UCSR1A)&(1<<UDRE1)));     //to check if UDR is empty or not if empty then load data to UDR
+	UDR1=data;
+	UCSR1A|=(1<<UDRE1);
+  a4:	10 92 98 00 	sts	0x0098, r1	; 0x800098 <__TEXT_REGION_LENGTH__+0x7e0098>
+  a8:	80 93 99 00 	sts	0x0099, r24	; 0x800099 <__TEXT_REGION_LENGTH__+0x7e0099>
+  ac:	ea e9       	ldi	r30, 0x9A	; 154
+  ae:	f0 e0       	ldi	r31, 0x00	; 0
+  b0:	80 81       	ld	r24, Z
+  b2:	88 61       	ori	r24, 0x18	; 24
+  b4:	80 83       	st	Z, r24
+  b6:	ed e9       	ldi	r30, 0x9D	; 157
+  b8:	f0 e0       	ldi	r31, 0x00	; 0
+  ba:	80 81       	ld	r24, Z
+  bc:	86 60       	ori	r24, 0x06	; 6
+  be:	80 83       	st	Z, r24
+  c0:	08 95       	ret
+
+000000c2 <en>:
+	LCD_PORT=((DATA )<<4)|(1<<RS);                //lsb data shifted by 4
+	en();                                         // lcd_port data copy to lcd
+}
+void en(){
+	
+	LCD_PORT|=(1<<EN);
+  c2:	da 9a       	sbi	0x1b, 2	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  c4:	8f e5       	ldi	r24, 0x5F	; 95
+  c6:	9a ee       	ldi	r25, 0xEA	; 234
+  c8:	01 97       	sbiw	r24, 0x01	; 1
+  ca:	f1 f7       	brne	.-4      	; 0xc8 <en+0x6>
+  cc:	00 c0       	rjmp	.+0      	; 0xce <en+0xc>
+  ce:	00 00       	nop
+	_delay_ms(15);
+	LCD_PORT&=~(1<<EN);
+  d0:	da 98       	cbi	0x1b, 2	; 27
+  d2:	8f e1       	ldi	r24, 0x1F	; 31
+  d4:	9e e4       	ldi	r25, 0x4E	; 78
+  d6:	01 97       	sbiw	r24, 0x01	; 1
+  d8:	f1 f7       	brne	.-4      	; 0xd6 <en+0x14>
+  da:	00 c0       	rjmp	.+0      	; 0xdc <en+0x1a>
+  dc:	00 00       	nop
+  de:	08 95       	ret
+
+000000e0 <lcd_cmd>:
+	lcd_data(UDR1);                  //to display received data on lcd
+	
+}
+
+//===============================================================================================
+void lcd_cmd(unsigned int COMMAND){
+  e0:	cf 93       	push	r28
+  e2:	c8 2f       	mov	r28, r24
+	
+	LCD_PORT=(COMMAND & 0xf0);                   //msb data copy to lcd_port
+  e4:	80 7f       	andi	r24, 0xF0	; 240
+  e6:	8b bb       	out	0x1b, r24	; 27
+	en();                                        // lcd_port data copy to lcd
+  e8:	0e 94 61 00 	call	0xc2	; 0xc2 <en>
+	LCD_PORT=((COMMAND & 0x0f)<<4);              //lsb data shifted by 4
+  ec:	c2 95       	swap	r28
+  ee:	c0 7f       	andi	r28, 0xF0	; 240
+  f0:	cb bb       	out	0x1b, r28	; 27
+	en();                                        // lcd_port data copy to lcd
+  f2:	0e 94 61 00 	call	0xc2	; 0xc2 <en>
+}
+  f6:	cf 91       	pop	r28
+  f8:	08 95       	ret
+
+000000fa <lcd_data>:
+void lcd_data(unsigned char DATA){
+  fa:	cf 93       	push	r28
+  fc:	c8 2f       	mov	r28, r24
+	
+	LCD_PORT=(DATA & 0xf0)|(1<<RS);               //msb data copy to lcd_port
+  fe:	80 7f       	andi	r24, 0xF0	; 240
+ 100:	81 60       	ori	r24, 0x01	; 1
+ 102:	8b bb       	out	0x1b, r24	; 27
+	en();                                         // lcd_port data copy to lcd
+ 104:	0e 94 61 00 	call	0xc2	; 0xc2 <en>
+	LCD_PORT=((DATA )<<4)|(1<<RS);                //lsb data shifted by 4
+ 108:	20 e1       	ldi	r18, 0x10	; 16
+ 10a:	c2 9f       	mul	r28, r18
+ 10c:	c0 01       	movw	r24, r0
+ 10e:	11 24       	eor	r1, r1
+ 110:	81 60       	ori	r24, 0x01	; 1
+ 112:	8b bb       	out	0x1b, r24	; 27
+	en();                                         // lcd_port data copy to lcd
+ 114:	0e 94 61 00 	call	0xc2	; 0xc2 <en>
+}
+ 118:	cf 91       	pop	r28
+ 11a:	08 95       	ret
+
+0000011c <uart_rx>:
+	UDR1=data;
+	UCSR1A|=(1<<UDRE1);
+	
+}
+void uart_rx(){
+	while (!((UCSR1A)&(1<<RXC1)));    //to check if reception of data is completed by controller or not.if completed then
+ 11c:	eb e9       	ldi	r30, 0x9B	; 155
+ 11e:	f0 e0       	ldi	r31, 0x00	; 0
+ 120:	80 81       	ld	r24, Z
+ 122:	88 23       	and	r24, r24
+ 124:	ec f7       	brge	.-6      	; 0x120 <uart_rx+0x4>
+	//come out of the loop
+	lcd_data(UDR1);                  //to display received data on lcd
+ 126:	80 91 9c 00 	lds	r24, 0x009C	; 0x80009c <__TEXT_REGION_LENGTH__+0x7e009c>
+ 12a:	0e 94 7d 00 	call	0xfa	; 0xfa <lcd_data>
+ 12e:	08 95       	ret
+
+00000130 <lcd_init>:
+ 130:	2f ef       	ldi	r18, 0xFF	; 255
+ 132:	89 ef       	ldi	r24, 0xF9	; 249
+ 134:	90 e0       	ldi	r25, 0x00	; 0
+ 136:	21 50       	subi	r18, 0x01	; 1
+ 138:	80 40       	sbci	r24, 0x00	; 0
+ 13a:	90 40       	sbci	r25, 0x00	; 0
+ 13c:	e1 f7       	brne	.-8      	; 0x136 <lcd_init+0x6>
+ 13e:	00 c0       	rjmp	.+0      	; 0x140 <lcd_init+0x10>
+ 140:	00 00       	nop
+	LCD_PORT&=~(1<<EN);
+	_delay_ms(5);
+}
+void lcd_init(){
+	_delay_ms(20);         //power on delay for lcd
+	DDRA=0xf5;             // set port as a lcd outport 11110101
+ 142:	85 ef       	ldi	r24, 0xF5	; 245
+ 144:	8a bb       	out	0x1a, r24	; 26
+	lcd_cmd(0x02);         //Return home
+ 146:	82 e0       	ldi	r24, 0x02	; 2
+ 148:	90 e0       	ldi	r25, 0x00	; 0
+ 14a:	0e 94 70 00 	call	0xe0	; 0xe0 <lcd_cmd>
+	lcd_cmd(0X28);         //2 lines and 5×7 matrix (4-bit mode)
+ 14e:	88 e2       	ldi	r24, 0x28	; 40
+ 150:	90 e0       	ldi	r25, 0x00	; 0
+ 152:	0e 94 70 00 	call	0xe0	; 0xe0 <lcd_cmd>
+	lcd_cmd(0X01);         //Clear display screen
+ 156:	81 e0       	ldi	r24, 0x01	; 1
+ 158:	90 e0       	ldi	r25, 0x00	; 0
+ 15a:	0e 94 70 00 	call	0xe0	; 0xe0 <lcd_cmd>
+	lcd_cmd(0X0f);
+ 15e:	8f e0       	ldi	r24, 0x0F	; 15
+ 160:	90 e0       	ldi	r25, 0x00	; 0
+ 162:	0e 94 70 00 	call	0xe0	; 0xe0 <lcd_cmd>
+	lcd_cmd(0X06);         //Increment cursor (shift cursor to right)
+ 166:	86 e0       	ldi	r24, 0x06	; 6
+ 168:	90 e0       	ldi	r25, 0x00	; 0
+ 16a:	0e 94 70 00 	call	0xe0	; 0xe0 <lcd_cmd>
+	lcd_cmd(0X80);         //Force cursor to beginning to 1st line
+ 16e:	80 e8       	ldi	r24, 0x80	; 128
+ 170:	90 e0       	ldi	r25, 0x00	; 0
+ 172:	0e 94 70 00 	call	0xe0	; 0xe0 <lcd_cmd>
+ 176:	08 95       	ret
+
+00000178 <main>:
+void lcd_result(int ,char *, int );     //print result value,(result,buffer[size],base)
+
+//=============================================================================================================
+int main(void)
+{	
+	lcd_init();
+ 178:	0e 94 98 00 	call	0x130	; 0x130 <lcd_init>
+	uart_init(103);
+ 17c:	87 e6       	ldi	r24, 0x67	; 103
+ 17e:	90 e0       	ldi	r25, 0x00	; 0
+ 180:	0e 94 52 00 	call	0xa4	; 0xa4 <uart_init>
+	
+	while (1)
+	{		   
+		 uart_rx();
+ 184:	0e 94 8e 00 	call	0x11c	; 0x11c <uart_rx>
+ 188:	fd cf       	rjmp	.-6      	; 0x184 <main+0xc>
+
+0000018a <_exit>:
+ 18a:	f8 94       	cli
+
+0000018c <__stop_program>:
+ 18c:	ff cf       	rjmp	.-2      	; 0x18c <__stop_program>

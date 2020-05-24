@@ -1,0 +1,152 @@
+
+ADC_LED.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000138  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000000e4  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000138  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000168  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000030  00000000  00000000  000001a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000008cb  00000000  00000000  000001d4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000800  00000000  00000000  00000a9f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002d5  00000000  00000000  0000129f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000044  00000000  00000000  00001574  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000003f8  00000000  00000000  000015b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000020  00000000  00000000  000019b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   8:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  10:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  14:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  18:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  1c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  20:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  24:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  28:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  2c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  30:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  34:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  38:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  3c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  40:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  44:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  48:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  4c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  50:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  54:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  58:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  5c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  60:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  64:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  68:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  6c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  70:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  74:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  78:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  7c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  80:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  84:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  88:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	0e 94 60 00 	call	0xc0	; 0xc0 <main>
+  9c:	0c 94 70 00 	jmp	0xe0	; 0xe0 <_exit>
+
+000000a0 <__bad_interrupt>:
+  a0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a4 <adc_init>:
+}
+void adc_init()
+
+{   //ADC0 IS SELECTED BY SETTING MUX5:0 TO ZERO.
+	// Vref set to 5 volt and 8 bits in higher ADCH and 2 bits in lower ADCL
+	ADMUX |= (1<<REFS0)|(1<<ADLAR);
+  a4:	87 b1       	in	r24, 0x07	; 7
+  a6:	80 66       	ori	r24, 0x60	; 96
+  a8:	87 b9       	out	0x07, r24	; 7
+	//prescaler set to 128 that is 125 KHz adc clk freq
+	ADCSRA |=(1<<ADEN)|(1<<ADPS0)|(1<<ADPS1)|(1<<ADPS2);
+  aa:	86 b1       	in	r24, 0x06	; 6
+  ac:	87 68       	ori	r24, 0x87	; 135
+  ae:	86 b9       	out	0x06, r24	; 6
+  b0:	08 95       	ret
+
+000000b2 <adc_start>:
+    //ADCSRB -> ADTS2:0  free running mode -- set to zero
+}
+
+void adc_start()
+{
+	ADCSRA |=(1<<ADSC);
+  b2:	36 9a       	sbi	0x06, 6	; 6
+	while(!(ADCSRA &(1<<ADIF)));
+  b4:	34 9b       	sbis	0x06, 4	; 6
+  b6:	fe cf       	rjmp	.-4      	; 0xb4 <adc_start+0x2>
+	PORTC = ADCH;
+  b8:	85 b1       	in	r24, 0x05	; 5
+  ba:	85 bb       	out	0x15, r24	; 21
+	ADCSRA|=(1<<ADIF);
+  bc:	34 9a       	sbi	0x06, 4	; 6
+  be:	08 95       	ret
+
+000000c0 <main>:
+#include <util/delay.h>
+void adc_init();
+void adc_start();
+int main(void)
+{  
+	DDRC=0xff;
+  c0:	8f ef       	ldi	r24, 0xFF	; 255
+  c2:	84 bb       	out	0x14, r24	; 20
+	adc_init();
+  c4:	0e 94 52 00 	call	0xa4	; 0xa4 <adc_init>
+    while (1) 
+    { 
+		adc_start();
+  c8:	0e 94 59 00 	call	0xb2	; 0xb2 <adc_start>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  cc:	2f ef       	ldi	r18, 0xFF	; 255
+  ce:	81 ee       	ldi	r24, 0xE1	; 225
+  d0:	94 e0       	ldi	r25, 0x04	; 4
+  d2:	21 50       	subi	r18, 0x01	; 1
+  d4:	80 40       	sbci	r24, 0x00	; 0
+  d6:	90 40       	sbci	r25, 0x00	; 0
+  d8:	e1 f7       	brne	.-8      	; 0xd2 <main+0x12>
+  da:	00 c0       	rjmp	.+0      	; 0xdc <main+0x1c>
+  dc:	00 00       	nop
+  de:	f4 cf       	rjmp	.-24     	; 0xc8 <main+0x8>
+
+000000e0 <_exit>:
+  e0:	f8 94       	cli
+
+000000e2 <__stop_program>:
+  e2:	ff cf       	rjmp	.-2      	; 0xe2 <__stop_program>
